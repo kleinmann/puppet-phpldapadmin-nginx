@@ -6,6 +6,12 @@ class phpldapadmin(
   $ldap_base_dn = '',
   $ldap_tls = false,
 ) {
+
+  package { 'php5-ldap':
+    ensure => present,
+    name   => 'php5-ldap',
+  }
+
   package { 'phpldapadmin':
     ensure   => present,
     name     => 'phpldapadmin',
