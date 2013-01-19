@@ -1,0 +1,8 @@
+name 'phpldapadmin-nginx'
+version '0.0.1'
+source 'git://github.com/kleinmann/puppet-phpldapadmin-nginx.git'
+author 'Uwe Kleinmann'
+description 'phpLDAPadmin with nginx vhost'
+summary 'phpLDAPadmin with nginx vhost'
+license 'BSD'
+project_page 'https://github.com/kleinmann/puppet-phpldapadmin-nginx'

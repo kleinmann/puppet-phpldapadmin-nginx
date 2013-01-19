@@ -1,0 +1,5 @@
+#/usr/bin/env bash
+# Requires fpm (effing package manager)
+
+# To be run in a directory with var/www/phpldapadmin under it.
+fpm -s dir -t deb --provides phpldapadmin -m "John Doe <john@example.com>" -a all --deb-user www-data --deb-group www-data -n phpldapadmin -v 1.2.3 .
