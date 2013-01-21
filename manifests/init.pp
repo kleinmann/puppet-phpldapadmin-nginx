@@ -16,22 +16,17 @@ class phpldapadmin(
     ensure   => present,
     name     => 'phpldapadmin',
     provider => 'dpkg',
-    source   => '/opt/debs/phpldapadmin_1.2.3_all.deb',
+    source   => '/tmp/phpldapadmin_1.2.3_all.deb',
     require  => File['phpldapadmin-package'],
-  }
-
-  file { '/opt/debs':
-    ensure => 'directory',
   }
 
   file { 'phpldapadmin-package':
     ensure  => 'present',
-    path    => '/opt/debs/phpldapadmin_1.2.3_all.deb',
+    path    => '/tmp/phpldapadmin_1.2.3_all.deb',
     owner   => 'root',
     group   => 'root',
     mode    => 0644,
     source  => 'puppet:///modules/phpldapadmin/phpldapadmin_1.2.3_all.deb',
-    require => File['/opt/debs'],
   }
 
   file { 'phpldapadmin-nginx-vhost':
