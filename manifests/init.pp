@@ -5,11 +5,15 @@ class phpldapadmin(
   $ldap_port = 389,
   $ldap_base_dn = '',
   $ldap_tls = false,
+  $php5_fpm_socket = "unix:/var/run/php5-fpm.sock"
 ) {
 
   package { 'php5-ldap':
     ensure => present,
-    name   => 'php5-ldap',
+    name   => 'php5-ldap'
+  }
+  package { 'php5-fpm':
+    ensure => present
   }
 
   package { 'phpldapadmin':
